@@ -1,6 +1,6 @@
 # Train Single-Routing Selection Problem (TSRSP) — Results Repository
 
-All results reported in this section—**CPU time distributions**, **performance profiles**, and **optimality gap distributions**—refer exclusively to the instances derived from the **Rouen railway network**.  
+All results reported in this section—**CPU time distributions**, **performance profiles**, and **LP relaxation and optimality gap distributions**—refer exclusively to the instances derived from the **Rouen railway network**.  
 These instances are grouped by compatibility graph density, with values of $\varepsilon \in${1, 0.9, 0.8}.
 
 All experiments were run with a maximum solution time of **300 seconds** per instance.
@@ -50,9 +50,26 @@ The following plots show $\rho_f(\tau)$ for each formulation and edge density le
 <br>
 
 
-## 📉 Optimality Gap for TSRSP Formulations
+## 📉 LP and Optimality Gap for TSRSP Formulations
 
-The following figure presents box plots of the **percentage optimality gap** (*Opt gap (%)*), computed as the percentage difference between the best feasible solution found and the best lower bound obtained within the time limit by all tested formulations, grouped by edge density levels of the compatibility graph.
+
+The following figure presents box plots of the **percentage LP relaxation gap** (*LP gap (%)*), computed as the percentage difference between the optimal solution value of the LP relaxation of a MILP formulation and the optimal solution value of the instance, grouped by edge density levels of the compatibility graph.
+
+<div align="center">
+  <img src="figures/LP_Rouen0.png" width="550"/>
+  <img src="figures/LP_Rouen10.png" width="550"/>
+  <img src="figures/LP_Rouen20.png" width="550"/>
+</div>
+
+**Observations:**
+- Formulations in the $\hat{G}$ family provide the **tightest LP relaxations**, with significantly smaller median gaps across all density levels.
+- The advantage is most pronounced at $\varepsilon = 1$, where the median LP gap is around 30%, and remains below 40% for $\varepsilon = 0.9$ and $\varepsilon = 0.8$, although variability slightly increases in sparser graphs.
+- In contrast, $S$, $GW$, and $G$ exhibit **very weak LP relaxations**, with gaps typically close to 100% and limited dispersion.
+- As edge density decreases, these weaker formulations show a **larger number of outliers**, indicating that some sparse instances admit relatively tighter relaxations.
+- Formulations including non-edge constraints (e.g., $\hat{G}_a$, $G_a$, $GW_a$) generally achieve **smaller LP gaps** than those based on anti-neighborhood constraints.
+<br>
+
+Finally, the following figure presents box plots of the **percentage optimality gap** (*Opt gap (%)*), computed as the percentage difference between the best feasible solution found and the best lower bound obtained within the time limit by all tested formulations, grouped by edge density levels of the compatibility graph.
 
 These values are reported **only for instances that were not solved to proven optimality**. Each plot includes the median, interquartile range, and potential outliers.
 This analysis complements the CPU time plots by evaluating **solution quality** when optimality is not reached.

@@ -35,7 +35,7 @@ The repository is organized into the following main folders:
 
 - [`data/`](./data/) — Contains all **benchmark instances** used in the computational experiments, including instance statistics and detailed descriptions of the input formats and directory structure for the **Rouen** and **Lille** railway networks.
 
-- [`results/`](./results/) — Contains the **computational results** obtained for the tested formulations, includin CPU time and optimality gap distributions, and performance profiles for the **Rouen** railway networks. A summary of computational results for all instances and formulations is also available as an Excel file.
+- [`results/`](./results/) — Contains the **computational results** obtained for the tested formulations, including CPU time, LP relaxation and optimality gap distributions, and performance profiles for the **Rouen** railway networks. A summary of computational results for all instances and formulations is also available as an Excel file.
 
 Each folder contains its own `README.md` file with further details.
 <br>
