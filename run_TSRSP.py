@@ -5,7 +5,7 @@ import time
 from collections import defaultdict
 
 TIME_LIMIT = 300
-EPS = 1e-7
+EPS = 1e-9
 
 ##############################################################################
 # READERS AND GRAPH STRUCTURES
