@@ -1,0 +1,72 @@
+
+Gurobi 13.0.0 (linux64) logging started Mon Jun 15 12:39:40 2026
+
+Set parameter OutputFlag to value 1
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (linux64 - "Ubuntu 22.04.5 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 5418Y, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 10 physical cores, 10 logical processors, using up to 10 threads
+
+Non-default parameters:
+TimeLimit  300
+LogToConsole  0
+
+Optimize a model with 30 rows, 18 columns and 106 nonzeros (Min)
+Model fingerprint: 0x55e99ce5
+Model has 18 linear objective coefficients
+Variable types: 9 continuous, 9 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [5e-01, 7e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Presolve removed 12 rows and 3 columns
+Presolve time: 0.00s
+Presolved: 18 rows, 15 columns, 73 nonzeros
+Variable types: 0 continuous, 15 integer (10 binary)
+Found heuristic solution: objective 20.0000000
+Found heuristic solution: objective 16.0000000
+
+Root relaxation: cutoff, 4 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0        16.00000   16.00000  0.00%     -    0s
+
+Explored 1 nodes (4 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 10 (of 10 available processors)
+
+Solution count 2: 16 20 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.600000000000e+01, best bound 1.600000000000e+01, gap 0.0000%
+
+
+====================================================
+TSRSP RESULTS
+====================================================
+INSTANCE     : example1
+SOLVER       : gurobi
+MODEL        : G+
+CLIQUE       : b
+
+N_VERTICES   : 9
+N_EDGES      : 16
+N_LAYERS     : 3
+
+BIN_VARS     : 9
+CONT_VARS    : 9
+CONSTRAINTS  : 30
+
+MIP_STATUS   : OPTIMAL
+UB           : 16.00
+LB           : 16.00
+MIP_GAP      : 0.00
+MIP_TIME     : 0.00
+NODES        : 1
+
+LP_STATUS    : OPTIMAL
+LP_VALUE     : 16.00
+LP_TIME      : 0.00
+LP_GAP_%     : 0.00

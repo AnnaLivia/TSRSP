@@ -1,0 +1,74 @@
+
+Gurobi 13.0.0 (linux64) logging started Mon Jun 15 12:39:40 2026
+
+Set parameter OutputFlag to value 1
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (linux64 - "Ubuntu 22.04.5 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 5418Y, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 10 physical cores, 10 logical processors, using up to 10 threads
+
+Non-default parameters:
+TimeLimit  300
+LogToConsole  0
+
+Optimize a model with 12 rows, 25 columns and 50 nonzeros (Min)
+Model fingerprint: 0x9e5a059c
+Model has 25 linear objective coefficients
+Variable types: 0 continuous, 25 integer (25 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 36.0000000
+Presolve removed 7 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 5 rows, 13 columns, 30 nonzeros
+Variable types: 0 continuous, 13 integer (13 binary)
+
+Root relaxation: objective 1.250000e+01, 3 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   12.50000    0    1   36.00000   12.50000  65.3%     -    0s
+H    0     0                      20.0000000   12.50000  37.5%     -    0s
+H    0     0                      16.0000000   12.50000  21.9%     -    0s
+     0     0   12.50000    0    1   16.00000   12.50000  21.9%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 10 (of 10 available processors)
+
+Solution count 3: 16 20 36 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.600000000000e+01, best bound 1.600000000000e+01, gap 0.0000%
+
+
+====================================================
+TSRSP RESULTS
+====================================================
+INSTANCE     : example1
+SOLVER       : gurobi
+MODEL        : S
+CLIQUE       : None
+
+N_VERTICES   : 9
+N_EDGES      : 16
+N_LAYERS     : 3
+
+BIN_VARS     : 25
+CONT_VARS    : 0
+CONSTRAINTS  : 12
+
+MIP_STATUS   : OPTIMAL
+UB           : 16.00
+LB           : 16.00
+MIP_GAP      : 0.00
+MIP_TIME     : 0.01
+NODES        : 1
+
+LP_STATUS    : OPTIMAL
+LP_VALUE     : 12.50
+LP_TIME      : 0.00
+LP_GAP_%     : 21.88

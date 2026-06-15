@@ -1,0 +1,75 @@
+Version identifier: 22.2.0.0 | 2026-05-04 | 5dff98e58
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_Threads                                 1
+CPXPARAM_TimeLimit                               300
+Found incumbent of value 64.000000 after 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 1 rows and 0 columns.
+MIP Presolve added 22 rows and 11 columns.
+Reduced MIP has 26 rows, 17 columns, and 52 nonzeros.
+Reduced MIP has 17 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.01 ticks)
+Probing time = 0.00 sec. (0.01 ticks)
+Tried aggregator 2 times.
+MIP Presolve eliminated 14 rows and 3 columns.
+MIP Presolve modified 2 coefficients.
+Aggregator did 2 substitutions.
+Reduced MIP has 10 rows, 12 columns, and 29 nonzeros.
+Reduced MIP has 12 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.05 ticks)
+Probing time = 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 10 rows, 12 columns, and 29 nonzeros.
+Reduced MIP has 12 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.02 ticks)
+Classifier predicts products in MIQP should be linearized.
+Probing time = 0.00 sec. (0.00 ticks)
+Clique table members: 1.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (0.01 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           64.0000        7.0000            89.06%
+*     0     0      integral     0       21.0000       21.0000        4    0.00%
+Elapsed time = 0.00 sec. (0.14 ticks, tree = 0.00 MB, solutions = 2)
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (0.14 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (0.14 ticks)
+
+
+====================================================
+TSRSP RESULTS
+====================================================
+INSTANCE     : example3
+SOLVER       : cplex
+MODEL        : Q
+CLIQUE       : b
+
+N_VERTICES   : 6
+N_EDGES      : 11
+N_LAYERS     : 3
+
+BIN_VARS     : 6
+CONT_VARS    : 0
+CONSTRAINTS  : 5
+
+MIP_STATUS   : integer optimal solution
+UB           : 21.00
+LB           : 21.00
+MIP_GAP      : 0.00
+MIP_TIME     : 0.00
+NODES        : 0
+
+LP_STATUS    : NOT_AVAILABLE
+LP_VALUE     : 
+LP_TIME      : 
+LP_GAP_%     : 

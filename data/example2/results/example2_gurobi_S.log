@@ -1,0 +1,73 @@
+
+Gurobi 13.0.0 (linux64) logging started Mon Jun 15 12:39:50 2026
+
+Set parameter OutputFlag to value 1
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (linux64 - "Ubuntu 22.04.5 LTS")
+
+CPU model: Intel(R) Xeon(R) Gold 5418Y, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 10 physical cores, 10 logical processors, using up to 10 threads
+
+Non-default parameters:
+TimeLimit  300
+LogToConsole  0
+
+Optimize a model with 12 rows, 32 columns and 64 nonzeros (Min)
+Model fingerprint: 0x5ddba4b6
+Model has 9 linear objective coefficients
+Variable types: 0 continuous, 32 integer (32 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+01, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 110.0000000
+Presolve removed 4 rows and 4 columns
+Presolve time: 0.00s
+Presolved: 8 rows, 28 columns, 56 nonzeros
+Variable types: 0 continuous, 28 integer (28 binary)
+
+Root relaxation: objective 1.000000e+01, 10 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   10.00000    0    3  110.00000   10.00000  90.9%     -    0s
+H    0     0                      20.0000000   10.00000  50.0%     -    0s
+     0     0   10.00000    0    3   20.00000   10.00000  50.0%     -    0s
+
+Explored 1 nodes (10 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 10 (of 10 available processors)
+
+Solution count 2: 20 110 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+01, best bound 2.000000000000e+01, gap 0.0000%
+
+
+====================================================
+TSRSP RESULTS
+====================================================
+INSTANCE     : example2
+SOLVER       : gurobi
+MODEL        : S
+CLIQUE       : None
+
+N_VERTICES   : 8
+N_EDGES      : 24
+N_LAYERS     : 4
+
+BIN_VARS     : 32
+CONT_VARS    : 0
+CONSTRAINTS  : 12
+
+MIP_STATUS   : OPTIMAL
+UB           : 20.00
+LB           : 20.00
+MIP_GAP      : 0.00
+MIP_TIME     : 0.01
+NODES        : 1
+
+LP_STATUS    : OPTIMAL
+LP_VALUE     : 10.00
+LP_TIME      : 0.00
+LP_GAP_%     : 50.00
