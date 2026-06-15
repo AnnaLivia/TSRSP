@@ -5,7 +5,7 @@ import time
 from collections import defaultdict
 
 TIME_LIMIT = 300
-EPS = 1e-7
+EPS = 1e-9
 
 ##############################################################################
 # READERS AND GRAPH STRUCTURES
@@ -46,12 +46,27 @@ def read_instance(folder):
     elif min_vertex < 0 or max_vertex >= n:
         raise ValueError("Vertex indices are inconsistent with n. Expected either 0..n-1 or 1..n.")
 
-    layers = []
+    layers = [None] * n
     with open(pfile) as f:
+        raw_layers = []
+
         for line in f:
             line = line.strip()
-            if line:
-                layers.append(int(line))
+
+            if not line or line.startswith("c"):
+                continue
+
+            parts = line.split()
+
+            # Case 1: one layer per line
+            if len(parts) == 1:
+                raw_layers.append(int(parts[0]))
+
+    if all(x is None for x in layers):
+        layers = raw_layers
+
+    if len(layers) != n:
+        raise ValueError(f"Expected {n} layer entries, found {len(layers)}")
 
     route_cost = []
     with open(qfile) as f:
