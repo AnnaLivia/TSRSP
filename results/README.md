@@ -1,16 +1,36 @@
 # Train Single-Routing Selection Problem (TSRSP) — Results Repository
 
-All results reported in this section—**CPU time distributions**, **performance profiles**, and **LP relaxation and optimality gap distributions**—refer exclusively to the instances derived from the **Rouen railway network**.  
-These instances are grouped by compatibility graph density, with values of $\varepsilon \in${1, 0.9, 0.8}.
+## 📊 Instance Statistics
+
+Complete statistics for the **Rouen** and **Lille** railway networks are available in the Excel file [`Computational_Results.xlsx`](./Computational_Results.xlsx).
+
+The file reports the following key statistics for each instance:
+
+- Number of trains ($k$);
+- Number of routes ($|\mathcal{V}|$);
+- Number of compatibility edges ($|\mathcal{E}|$);
+- Objective function values;
+- Computational results for the tested formulations.
+
+For the **Rouen** instances, all instances were solved to optimality. The complete list of optimal values for all Rouen instances is available in the spreadsheet associated with formulation $G$.
+
+For the **Lille** instances, only three instances ($L_1$, $L_2$, and $L_3$) were solved to optimality. For all remaining instances, the file reports the **best known upper bound** obtained within the time limit of 300 seconds.
+<br>
+
+All results reported below — **CPU time distributions**, **performance profiles**, and **LP relaxation and optimality gap distributions** — refer to the instances derived from the **Rouen railway network**.  
+These instances are grouped by compatibility graph density, with values $\varepsilon \in \{1,0.9,0.8\}$.
 
 All experiments were run with a maximum solution time of **300 seconds** per instance.
+<br>
+
 
 ## 🕒 CPU Time Results for TSRSP Formulations
 
 ### 📈 CPU Time Distributions
 
-The following box plots show the distribution of CPU times (in seconds) for all tested formulations, grouped by edge density levels of the compatibility graph.
-Each plot includes the median, interquartile range, and potential outliers, as well as the number of optimally solved instances ("\#opt") out of 100 per group.
+The following box plots show the distribution of CPU times, in seconds, for all tested formulations, grouped by edge density of the compatibility graph.
+
+Each plot reports the median, the interquartile range, and the outliers. It also reports the number of instances solved to proven optimality, denoted by **#opt**, out of 100 instances for each group.
 
 <div align="center">
   <img src="figures/Time_Rouen0.png" width="550"/>
@@ -19,22 +39,27 @@ Each plot includes the median, interquartile range, and potential outliers, as w
 </div>
 
 **Observations:**
-- The best performance is achieved by formulations $\hat{G}$, $\hat{G}_a$, and $\hat{G}_b$, with consistently low CPU times and narrow distributions.
-- Formulation $G$ is also efficient for $\varepsilon = 1$, but its variants degrade in performance with sparser graphs.
-- Formulations $GW$, $Q$, and $S$ perform poorly, with CPU times often approaching the 300-second limit.
+
+- The best performance is obtained by formulations $\hat{G}$, $\hat{G}_a$, and $\hat{G}_b$, which show low CPU times and small variability.
+- Formulation $G$ is also effective for $\varepsilon = 1$, while its performance decreases when the compatibility graph becomes sparser.
+- Formulations $GW$, $Q$, and $S$ are less effective, with CPU times often close to the time limit of 300 seconds.
 <br>
+
 
 ### 📊 Performance Profiles
 
-Following [Dolan and Moré (2002)](https://link.springer.com/article/10.1007/s101070100263), the **performance profile** $\rho_f(\tau)$ for a formulation $f$ measures how close its solution times are to the best solver across instances.
+Following [Dolan and Moré (2002)](https://link.springer.com/article/10.1007/s101070100263), the **performance profile** $\rho_f(\tau)$ of a formulation $f$ measures how close its solution times are to the best solution time obtained over all tested formulations.
 
-Let $t_{i,f}$ be the solution time for instance $i$ with formulation $f$, and $\mathcal{F}$ be the set of all tested formulations:
+Let $t_{i,f}$ be the solution time of formulation $f$ on instance $i$, and let $\mathcal{F}$ be the set of tested formulations. We define:
 
 $$
-r_{i,f} = \frac{t_{i,f}}{\min_{f' \in \mathcal{F}} t_{i,f'}} \quad,\quad \rho_f(\tau) = \frac{|\{ i \in \mathcal{I} : r_{i,f} \leq \tau \}|}{|\mathcal{I}|}
+r_{i,f} = \frac{t_{i,f}}{\min_{f' \in \mathcal{F}} t_{i,f'}}
+\quad,\quad
+\rho_f(\tau) =
+\frac{|\{ i \in \mathcal{I} : r_{i,f} \leq \tau \}|}{|\mathcal{I}|}.
 $$
 
-The following plots show $\rho_f(\tau)$ for each formulation and edge density level.
+The following plots show $\rho_f(\tau)$ for each formulation and for each value of the edge density.
 
 <div align="center">
   <img src="figures/PP_Rouen_0.png" width="480"/>
@@ -43,17 +68,20 @@ The following plots show $\rho_f(\tau)$ for each formulation and edge density le
 </div>
 
 **Observations:**
-- Formulations $\hat{G}$, $\hat{G}_a$, and $\hat{G}_b$ dominate across all $\tau$.
-- $G$ is competitive for dense graphs but degrades with sparsity.
-- $GW$, $Q$, and $S$ exhibit poor performance and solve fewer instances in acceptable time frames.
-- The impact of using the **non-edge constraints** over **anti-neighborhood constraints** is limited.
+
+- Formulations $\hat{G}$, $\hat{G}_a$, and $\hat{G}_b$ dominate the other formulations for all values of $\tau$.
+- Formulation $G$ is competitive on dense graphs, but its performance decreases on sparser graphs.
+- Formulations $GW$, $Q$, and $S$ solve fewer instances within short computing times.
+- The difference between **non-edge constraints** and **anti-neighborhood constraints** is limited in terms of CPU time.
 <br>
 
 
 ## 📉 LP and Optimality Gap for TSRSP Formulations
 
+The following figure reports the box plots of the **percentage LP relaxation gap**, denoted by **LP gap (%)**.  
+The gap is computed as the percentage difference between the optimal value of the LP relaxation of a MILP formulation and the optimal value of the instance.
 
-The following figure presents box plots of the **percentage LP relaxation gap** (*LP gap (%)*), computed as the percentage difference between the optimal solution value of the LP relaxation of a MILP formulation and the optimal solution value of the instance, grouped by edge density levels of the compatibility graph.
+The results are grouped by edge density of the compatibility graph.
 
 <div align="center">
   <img src="figures/LP_Rouen0.png" width="550"/>
@@ -62,17 +90,18 @@ The following figure presents box plots of the **percentage LP relaxation gap** 
 </div>
 
 **Observations:**
-- Formulations in the $\hat{G}$ family provide the **tightest LP relaxations**, with significantly smaller median gaps across all density levels.
-- The advantage is most pronounced at $\varepsilon = 1$, where the median LP gap is around 30%, and remains below 40% for $\varepsilon = 0.9$ and $\varepsilon = 0.8$, although variability slightly increases in sparser graphs.
-- In contrast, $S$, $GW$, and $G$ exhibit **very weak LP relaxations**, with gaps typically close to 100% and limited dispersion.
-- As edge density decreases, these weaker formulations show a **larger number of outliers**, indicating that some sparse instances admit relatively tighter relaxations.
-- Formulations including non-edge constraints (e.g., $\hat{G}_a$, $G_a$, $GW_a$) generally achieve **smaller LP gaps** than those based on anti-neighborhood constraints.
+
+- Formulations in the $\hat{G}$ family provide the strongest LP relaxations, with smaller median gaps for all density levels.
+- The improvement is particularly clear for $\varepsilon = 1$, where the median LP gap is around 30%.
+- For $\varepsilon = 0.9$ and $\varepsilon = 0.8$, the LP gap remains below 40% on average, although the variability increases.
+- Formulations $S$, $GW$, and $G$ provide weaker LP relaxations, with gaps often close to 100%.
+- Formulations with non-edge constraints, such as $\hat{G}_a$, $G_a$, and $GW_a$, generally give smaller LP gaps than the corresponding variants with anti-neighborhood constraints.
 <br>
 
-Finally, the following figure presents box plots of the **percentage optimality gap** (*Opt gap (%)*), computed as the percentage difference between the best feasible solution found and the best lower bound obtained within the time limit by all tested formulations, grouped by edge density levels of the compatibility graph.
+The following figure reports the box plots of the **percentage optimality gap**, denoted by **Opt gap (%)**.  
+The gap is computed as the percentage difference between the best feasible solution found and the best lower bound obtained within the time limit.
 
-These values are reported **only for instances that were not solved to proven optimality**. Each plot includes the median, interquartile range, and potential outliers.
-This analysis complements the CPU time plots by evaluating **solution quality** when optimality is not reached.
+The values are reported only for the instances that were not solved to proven optimality. This analysis complements the CPU time plots by showing the quality of the solutions when optimality is not reached.
 
 <div align="center">
   <img src="figures/Opt_Rouen0.png" width="550"/>
@@ -81,11 +110,12 @@ This analysis complements the CPU time plots by evaluating **solution quality** 
 </div>
 
 **Observations:**
-- Formulations in the $G$ family not only solve more instances to optimality but also yield **smaller gaps** on unsolved instances.
-- In contrast, $S$, $GW$, and $Q$ produce a higher number of suboptimal solutions, often with **larger optimality gaps**.
-- At $\varepsilon = 1$, most unsolved instances under $G$ show gaps below 40%, while $GW$ and $Q$ often exceed 60–100%.
-- The $S$ formulation consistently shows the **largest median gaps** across densities.
-- As edge density decreases ($\varepsilon = 0.9$ and $0.8$), both $G_a$ and $G_b$ exhibit **larger upper quartiles**, suggesting that sparse compatibility graphs are harder to solve optimally.
-- Between the two, $G_a$ outperforms $G_b$, confirming the theoretical advantage of **non-edge constraints** over **anti-neighborhood constraints**.
-- Interestingly, the **median and first quartile** of $GW$, especially $GW_a$, **decrease** as edge density drops, reflecting the smaller model size in sparser instances.
+
+- Formulations in the $G$ family solve more instances to optimality and also provide smaller gaps on the unsolved instances.
+- Formulations $S$, $GW$, and $Q$ produce more suboptimal solutions and, in general, larger optimality gaps.
+- For $\varepsilon = 1$, most unsolved instances solved with $G$ have gaps below 40%, while the gaps of $GW$ and $Q$ often exceed 60%.
+- Formulation $S$ shows the largest median gaps across the three density levels.
+- When the edge density decreases, both $G_a$ and $G_b$ show larger upper quartiles, suggesting that sparser compatibility graphs are harder to solve to optimality.
+- Formulation $G_a$ performs better than $G_b$, confirming the advantage of using **non-edge constraints** instead of **anti-neighborhood constraints**.
+- The median and first quartile of $GW$, especially $GW_a$, decrease when the edge density decreases, due to the smaller number of edge variables in sparser instances.
 <br>

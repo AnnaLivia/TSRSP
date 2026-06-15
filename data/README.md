@@ -2,7 +2,10 @@
 
 ## 🗂️ Repository Structure
 
-The repository is organized into two main (.zip) directories, corresponding to the two railway networks under study:
+The repository is organized into two main (.zip) directories, corresponding to the two railway networks under study.
+
+The repository also contains the three illustrative examples discussed in the paper. For each example, the complete instance files are provided together with the corresponding computational logs in the `results/` folder.
+<br>
 
 ### 🛤️ `Rouen/`
 
@@ -22,27 +25,6 @@ This directory contains instances built on the **Lille Railway Network**, charac
 
 - `Lille/Lille_Peak/` — Peak-time instances
 - `Lille/Lille_OffPeak/` — Off-peak-time instances
-<br>
-
-
-## 📊 Instance Statistics
-
-Complete statistics for the **Rouen** and **Lille** railway networks are available in the following files:
-- [`Rouen.pdf`](./tables/Rouen.pdf);
-- [`Lille.pdf`](./tables/Lille.pdf).
-
-The tables in these two PDF files report the following key statistics for each instance:
-
-- Number of trains ($k$);
-- Number of routes ($|\mathcal{V}|$);
-- Number of compatibility edges ($|\mathcal{E}|$);
-- Information on the objective function values ($Obj$).
-
-For the **Rouen** instances, all instances were solved to optimality. The corresponding table reports the **minimum and maximum optimal objective values** for each group of instances.  
-The complete list of optimal values for all Rouen instances is available in the Excel file [`../results/Computational_Results.xlsx`](../results/Computational_Results.xlsx), in the spreadsheet associated with formulation $G$.
-
-For the **Lille** instances, only three instances ($L_1$, $L_2$, and $L_3$) were solved to optimality. Their respective rows report the optimal solution values.  
-For all remaining instances, the column reports the **best known upper bound** obtained within the time limit (300-seconds).
 <br>
 
 
@@ -67,6 +49,7 @@ Each `scenario_XXX/` folder contains **four files**, encoding the full input dat
 
 
 ### 🧮 Reference Example
+
 <p align="center">
   <img width="412" height="215" alt="image" src="https://github.com/user-attachments/assets/51ddc561-c733-4db3-842b-4937ca2567fd" />
 </p>
@@ -78,9 +61,9 @@ Each `scenario_XXX/` folder contains **four files**, encoding the full input dat
 - Edge density ε = 16⁄26 ≈ 0.615.  
 - The optimal 3-clique consists of routes `{2, 5, 8}` with a total cost (clique weight) of **16**.
 
-The corresponding files for this illustrative instance, contained in the `example/` folder, are:
-- `example.data` — lists the 16 edges of the compatibility graph  
-- `example.p` — route-to-train mapping  
-- `example.q` — route costs  
-- `example.r` — pairing costs.
+The corresponding files for this illustrative instance, contained in the `example1/` folder, are:
+- `example1.data` — lists the 16 edges of the compatibility graph  
+- `example1.p` — route-to-train mapping  
+- `example1.q` — route costs  
+- `example1.r` — pairing costs.
 <br>

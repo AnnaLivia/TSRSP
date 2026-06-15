@@ -31,11 +31,13 @@ In the referenced article, we:
 
 ## 📁 Repository Structure
 
-The repository is organized into the following main folders:
+The repository is organized into the following main folders and files:
 
 - [`data/`](./data/) — Contains all **benchmark instances** used in the computational experiments, including instance statistics and detailed descriptions of the input formats and directory structure for the **Rouen** and **Lille** railway networks.
 
-- [`results/`](./results/) — Contains the **computational results** obtained for the tested formulations, including CPU time, LP relaxation and optimality gap distributions, and performance profiles for the **Rouen** railway networks. A summary of computational results for all instances and formulations is also available as an Excel file.
+- [`results/`](./results/) — Contains the **computational results** obtained for the tested formulations, including CPU time, LP relaxation and optimality gap distributions, and performance profiles for the **Rouen** railway network. A summary of computational results for all instances and formulations is also available as an Excel file.
+
+- [`code/`](./code/) — Contains the source code used to run the computational experiments with **CPLEX** or **Gurobi**. The implementations include the tested TSRSP formulations ($S$, $Q$, $GW$, $G$, and $G^+$), support both LP relaxations and MIP models, and generate logs and summary statistics for the benchmark instances. Run `python3 run_TSRSP.py -help` fo futher details.
 
 Each folder contains its own `README.md` file with further details.
 <br>
