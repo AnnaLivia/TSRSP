@@ -37,7 +37,7 @@ The repository is organized into the following main folders and files:
 
 - [`results/`](./results/) — Contains the **computational results** obtained for the tested formulations, including CPU time, LP relaxation and optimality gap distributions, and performance profiles for the **Rouen** railway network. A summary of computational results for all instances and formulations is also available as an Excel file.
 
-- <a href="./run_TSRSP.py"><code>run_TSRSP.py</code></a> — Source code used to reproduce the computational experiments presented in the paper. The implementations include the tested TSRSP formulations ($S$, $Q$, $GW$, $G$, and $\hat{G}$), support both LP relaxations and MIP models, and generate logs and summary statistics for the benchmark instances. Run `python3 run_TSRSP.py -help` fo futher details.
+- <a href="./run_TSRSP.py"><code>run_TSRSP.py</code></a> — Source code used to reproduce the computational experiments presented in the paper. The implementations include the tested TSRSP formulations ($S$, $Q$, $GW$, $G$, and $\hat{G}$), support both LP relaxations and MIP models, and generate logs and summary statistics for the benchmark instances. Run `python3 run_TSRSP.py -help` for further details.
 
 Each folder contains its own `README.md` file with further details.
 <br>
