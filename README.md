@@ -48,10 +48,14 @@ Each folder contains its own `README.md` file with further details.
 If you use this dataset in academic work, please cite:
 
 ```
-@article{Croella2025TSRSP,
-  title={An exact approach for the Train Single-Routing Selection Problem},
-  author={Croella, A.L. and Furini, F. and Ljubić, I. and Pascariu, B. and Pellegrini, P. and San Segundo, P.},
-  year={2025}
+@article{CROELLA2026,
+  title = {An exact approach for the Train Single-Routing Selection Problem},
+  journal = {European Journal of Operational Research},
+  year = {2026},
+  issn = {0377-2217},
+  doi = {https://doi.org/10.1016/j.ejor.2026.08.028},
+  url = {https://www.sciencedirect.com/science/article/pii/S0377221726007137},
+  author = {Anna Livia Croella and Fabio Furini and Ivana Ljubić and Bianca Pascariu and Paola Pellegrini and Pablo {San Segundo}}
 }
 ```
 <br>
